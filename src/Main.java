@@ -28,6 +28,7 @@ printIncreasing(n-1);
 
     Finding      Factorial
      */
+   /*
     static int  factorial(int n){
         if(n==1 || n==0 ){
             return 1;
@@ -35,9 +36,22 @@ printIncreasing(n-1);
         return n * factorial((n-1));
 
     }
+
+    */
+    static int  Fabonacci(int n)
+    {
+        if(n==1 || n==0 ){
+            return 1;
+        }
+        int prev = Fabonacci(n-1);
+        int prevPrev = Fabonacci(n-2);
+
+        return n = prev + prevPrev ;
+
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        System.out.println( factorial(n));
+        System.out.println( Fabonacci(n));
     }
 }
