@@ -38,6 +38,7 @@ printIncreasing(n-1);
     }
 
     */
+    /*
     static int  Fabonacci(int n)
     {
         if(n==1 || n==0 ){
@@ -49,9 +50,20 @@ printIncreasing(n-1);
         return n = prev + prevPrev ;
 
     }
+        System.out.println( Fabonacci(n));
+
+     */
+    static int sumOfDigits(int n){
+        if (n > 0 && n <= 9) {
+            return n;
+        }
+            return sumOfDigits(n / 10) + n % 10;
+    }
+
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        System.out.println( Fabonacci(n));
+        System.out.println(sumOfDigits(n));
     }
 }
