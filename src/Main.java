@@ -62,6 +62,24 @@ printIncreasing(n-1);
     }
 
         System.out.println(sumOfDigits(n));
+        public class ReverseStringRecursion {
+
+    static String reverse(String str) {
+        // base case: if string is empty or length 1
+        if (str.isEmpty()) {
+            return str;
+        }
+        // take first character, reverse rest, and put char at the end
+        return reverse(str.substring(1)) + str.charAt(0);
+    }
+
+    public static void main(String[] args) {
+        String word = "hello";
+        System.out.println("Original: " + word);
+        System.out.println("Reversed: " + reverse(word));
+    }
+}
+
      */
 
         static int pow(int p , int q ){
