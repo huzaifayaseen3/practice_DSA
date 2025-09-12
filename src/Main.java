@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 public class Main {
     /*
@@ -81,6 +82,7 @@ printIncreasing(n-1);
 }
 
      */
+    /*
 
         static int pow(int p , int q ){
             if(q == 0){
@@ -88,13 +90,35 @@ printIncreasing(n-1);
             }
             return pow(p,q-1) * p ;
         }
+
+         Bubble sort */
+    static void bubbleSort(int [] a){
+        int n = a.length;
+        for(int i=0 ; i<n-1 ; i++){
+            for(int j =0 ; j<n-i-1; j++){
+                if(a[j] > a[j+1]){
+                    int temp = a[j] ;
+                    a[j] = a[j+1];
+                    a[j+1] = temp ;
+                }
+            }
+        }
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         //int n = sc.nextInt();
-        System.out.println("Enter pth Term : ");
-        int p = sc.nextInt();
-        System.out.println("Enter qth Term : ");
-        int q = sc.nextInt();
-        System.out.println(pow(p,q));
+//        System.out.println("Enter pth Term : ");
+//        int p = sc.nextInt();
+//        System.out.println("Enter qth Term : ");
+//        int q = sc.nextInt();
+//        System.out.println(pow(p,q));
+//        int [] arr = new int [] {2,8,6,5,9} ;
+//       bubbleSort(arr);
+//        System.out.println(Arrays.toString(arr));
+        int [] a = {2,8,6,5,9} ;
+        bubbleSort(a);
+        for(int i : a){
+            System.out.println(i + " ");
+        }
     }
 }
