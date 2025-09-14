@@ -164,10 +164,17 @@ printIncreasing(n-1);
         Node next ;
 
         public Node(int data ) {
-            this.next = next;
+            this.next = null;
             this.data =data;
         }
     }
+    // using recursion
+    public static void  displayrecursion(Node a ){
+        if(a== null) return;
+        displayrecursion(a.next);
+        System.out.println(a.data +" ");
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Node a = new Node (5) ;
@@ -181,10 +188,11 @@ printIncreasing(n-1);
         c.next = d ; // 5->4->6->7 2
         d.next = e ; // 5->4->6->7->2
         Node temp = a ;
-        while(temp != null ){
-            System.out.println(temp.data + " ");
-            temp= temp.next;
-
-        }
+//        while(temp != null ){
+//            System.out.println(temp.data + " ");
+//            temp= temp.next;
+//
+//        }
+        displayrecursion(a);
         }
 }
