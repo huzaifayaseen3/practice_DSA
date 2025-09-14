@@ -91,7 +91,21 @@ printIncreasing(n-1);
             return pow(p,q-1) * p ;
         }
 
+        int n = sc.nextInt();
+        System.out.println("Enter pth Term : ");
+        int p = sc.nextInt();
+        System.out.println("Enter qth Term : ");
+        int q = sc.nextInt();
+        int max = a[0];
+        for(int i : a){
+            if(i > max){
+                max = i ;
+            }
+        }
+        System.out.println(pow(p,q));
+
          Bubble sort */
+    /*
     static void bubbleSort(int [] a){
         int n = a.length;
         for(int i=0 ; i<n-1 ; i++){
@@ -104,21 +118,73 @@ printIncreasing(n-1);
             }
         }
     }
-    public static void main(String[] args) {
-    //    Scanner sc = new Scanner(System.in);
-        //int n = sc.nextInt();
-//        System.out.println("Enter pth Term : ");
-//        int p = sc.nextInt();
-//        System.out.println("Enter qth Term : ");
-//        int q = sc.nextInt();
-//        System.out.println(pow(p,q));
-//        int [] arr = new int [] {2,8,6,5,9} ;
-//       bubbleSort(arr);
-//        System.out.println(Arrays.toString(arr));
+
+        int [] arr = new int [] {2,8,6,5,9} ;
+       bubbleSort(arr);
+        System.out.println(Arrays.toString(arr));
         int [] a = {2,8,6,5,9} ;
         bubbleSort(a);
         for(int i : a){
             System.out.println(i + " ");
+       Selection Sort */
+    /*
+    static void selectionSort(int [] a ){
+        int n = a.length ;
+        for(int i = 0 ; i < n-1 ; i++){
+            int smallestNum = i ;
+            for(int j = i+1 ; j < n ; j++){
+                if(a[j] < a[smallestNum]){
+                    smallestNum = j;
+                }
+            }
+        int temp = a[i] ;
+            a[i] = a[smallestNum];
+            a[smallestNum] = temp ;
         }
     }
+
+        selectionSort(a);
+     */
+    /*
+
+      int [] a ={2,5,6,96,78};
+        int sum =0 ;
+        for(int i : a){
+            sum += i ;
+        }
+        System.out.println(max);
+        System.out.println(sum);
+        for(int i : a){
+            System.out.println(i + " ");
+        }
+     */
+    /* Linked list Starts */
+    public static class Node{
+        int data ;
+        Node next ;
+
+        public Node(int data ) {
+            this.next = next;
+            this.data =data;
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Node a = new Node (5) ;
+        Node b = new Node (4) ;
+        Node c = new Node (6) ;
+        Node d = new Node (7) ;
+        Node e = new Node (2) ;
+        // 5 4 6 7 2
+        a.next = b ; // 5->4 6 7 2
+        b.next = c ; // 5->4->6 7 2
+        c.next = d ; // 5->4->6->7 2
+        d.next = e ; // 5->4->6->7->2
+        Node temp = a ;
+        while(temp != null ){
+            System.out.println(temp.data + " ");
+            temp= temp.next;
+
+        }
+        }
 }
