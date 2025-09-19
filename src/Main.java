@@ -1,8 +1,10 @@
-import java.util.Arrays;
-import java.util.Scanner;
+//import java.util.Arrays;
+//import java.util.Scanner;
+import java.util.ArrayDeque;
+import java.util.Deque;
 public class Main {
     /*
-    (   Recursion Basics (A function repeating it-self  )
+    (   Recursion Basics (A function repeating it-self  ) )
 public static  void printIncreasing(int n){
     if(n == 1){
         System.out.println(n);
@@ -146,6 +148,75 @@ printIncreasing(n-1);
         selectionSort(a);
      */
     /*
+    1. Adding elements
+
+add(E e) → add at end
+
+add(int index, E element) → add at specific position
+
+addFirst(E e) → add at beginning
+
+addLast(E e) → add at end (same as add)
+
+offer(E e) → add at end (queue style)
+
+offerFirst(E e) → add at beginning
+
+offerLast(E e) → add at end
+
+2. Removing elements
+
+remove() → remove first element
+
+remove(int index) → remove element at index
+
+remove(Object o) → remove by value
+
+removeFirst() → remove first element
+
+removeLast() → remove last element
+
+poll() → remove first element (queue style)
+
+pollFirst() → remove first element
+
+pollLast() → remove last element
+
+clear() → remove all elements
+
+3. Accessing elements
+
+get(int index) → get by index
+
+getFirst() → get first element
+
+getLast() → get last element
+
+peek() → see first element (no remove)
+
+peekFirst() → same as peek()
+
+peekLast() → see last element
+
+4. Searching
+
+contains(Object o) → check if value exists
+
+indexOf(Object o) → first index of value
+
+lastIndexOf(Object o) → last index of value
+
+5. Size and utility
+
+size() → number of elements
+
+isEmpty() → check if list is empty
+
+toArray() → convert to array
+
+iterator() → loop with iterator
+
+descendingIterator() → loop in reverse
 
       int [] a ={2,5,6,96,78};
         int sum =0 ;
@@ -159,6 +230,7 @@ printIncreasing(n-1);
         }
      */
     /* Linked list Starts */
+    /*
     public static class Node{
         int data ;
         Node next ;
@@ -176,12 +248,13 @@ printIncreasing(n-1);
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        //Scanner sc = new Scanner(System.in);
         Node a = new Node (5) ;
         Node b = new Node (4) ;
         Node c = new Node (6) ;
         Node d = new Node (7) ;
         Node e = new Node (2) ;
+
         // 5 4 6 7 2
         a.next = b ; // 5->4 6 7 2
         b.next = c ; // 5->4->6 7 2
@@ -194,5 +267,54 @@ printIncreasing(n-1);
 //
 //        }
         displayrecursion(a);
+
+
         }
 }
+
+     */
+
+
+        public static void main(String[] args) {
+
+            // The Deque interface provides stack-like methods (push, pop, peek)
+            // ArrayDeque is an efficient implementation of Deque
+            Deque<String> stack = new ArrayDeque<>();
+
+            // 1. push() operation: Adding elements to the top
+            System.out.println("Pushing elements onto the stack:");
+            stack.push("Plate 1");
+            stack.push("Plate 2");
+            stack.push("Plate 3");
+            System.out.println("Current stack: " + stack); // [Plate 3, Plate 2, Plate 1]
+
+            System.out.println("-----------------------------------");
+
+            // 2. peek() operation: Viewing the top element without removing it
+            String topPlate = stack.peek();
+            System.out.println("Top element (peek): " + topPlate); // Plate 3
+            System.out.println("Stack after peek: " + stack); // [Plate 3, Plate 2, Plate 1]
+
+            System.out.println("-----------------------------------");
+
+            // 3. pop() operation: Removing the top element
+            String removedPlate = stack.pop();
+            System.out.println("Removed element (pop): " + removedPlate); // Plate 3
+            System.out.println("Stack after pop: " + stack); // [Plate 2, Plate 1]
+
+            System.out.println("-----------------------------------");
+
+            // 4. isEmpty() operation: Checking if the stack is empty
+            System.out.println("Is the stack empty? " + stack.isEmpty()); // false
+
+            System.out.println("-----------------------------------");
+
+            // Pop all remaining elements
+            System.out.println("Popping all remaining elements:");
+            while (!stack.isEmpty()) {
+                System.out.println("Popped: " + stack.pop());
+            }
+
+            System.out.println("Is the stack empty now? " + stack.isEmpty()); // true
+        }
+    }
