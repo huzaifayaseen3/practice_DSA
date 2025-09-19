@@ -315,6 +315,7 @@ descendingIterator() → loop in reverse
                 System.out.println("Popped: " + stack.pop());
             }
 
-            System.out.println("Is the stack empty now? " + stack.isEmpty()); // true
+            System.out.println("Is the stack empty now? " + stack.isEmpty());
+            System.out.println();// true
         }
     }
