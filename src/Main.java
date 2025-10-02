@@ -1,8 +1,8 @@
 //import java.util.Arrays;
 //import java.util.Scanner;
-import java.util.ArrayDeque;
-import java.util.Deque;
-public class Main {
+import java.util.*;
+/*
+public class Main {*/
     /*
     (   Recursion Basics (A function repeating it-self  ) )
 public static  void printIncreasing(int n){
@@ -230,7 +230,7 @@ descendingIterator() → loop in reverse
         }
      */
     /* Linked list Starts */
-    /*
+/*
     public static class Node{
         int data ;
         Node next ;
@@ -260,7 +260,7 @@ descendingIterator() → loop in reverse
         b.next = c ; // 5->4->6 7 2
         c.next = d ; // 5->4->6->7 2
         d.next = e ; // 5->4->6->7->2
-        Node temp = a ;
+       // Node temp = a ;
 //        while(temp != null ){
 //            System.out.println(temp.data + " ");
 //            temp= temp.next;
@@ -269,53 +269,59 @@ descendingIterator() → loop in reverse
         displayrecursion(a);
 
 
+
         }
 }
 
-     */
-
-
+*//*
+    
         public static void main(String[] args) {
+            LinkedList<Integer> ll = new LinkedList<>();
+            ll.add(10);
+            ll.add(20);
+            ll.add(15);
+            System.out.println(ll.get(1));
+             int a = ll.set(1,4);
+            System.out.println(a);
+            System.out.println(ll.size() );
 
-            // The Deque interface provides stack-like methods (push, pop, peek)
-            // ArrayDeque is an efficient implementation of Deque
-            Deque<String> stack = new ArrayDeque<>();
 
-            // 1. push() operation: Adding elements to the top
-            System.out.println("Pushing elements onto the stack:");
-            stack.push("Plate 1");
-            stack.push("Plate 2");
-            stack.push("Plate 3");
-            System.out.println("Current stack: " + stack); // [Plate 3, Plate 2, Plate 1]
 
-            System.out.println("-----------------------------------");
-
-            // 2. peek() operation: Viewing the top element without removing it
-            String topPlate = stack.peek();
-            System.out.println("Top element (peek): " + topPlate); // Plate 3
-            System.out.println("Stack after peek: " + stack); // [Plate 3, Plate 2, Plate 1]
-
-            System.out.println("-----------------------------------");
-
-            // 3. pop() operation: Removing the top element
-            String removedPlate = stack.pop();
-            System.out.println("Removed element (pop): " + removedPlate); // Plate 3
-            System.out.println("Stack after pop: " + stack); // [Plate 2, Plate 1]
-
-            System.out.println("-----------------------------------");
-
-            // 4. isEmpty() operation: Checking if the stack is empty
-            System.out.println("Is the stack empty? " + stack.isEmpty()); // false
-
-            System.out.println("-----------------------------------");
-
-            // Pop all remaining elements
-            System.out.println("Popping all remaining elements:");
-            while (!stack.isEmpty()) {
-                System.out.println("Popped: " + stack.pop());
-            }
-
-            System.out.println("Is the stack empty now? " + stack.isEmpty());
-            System.out.println();// true
         }
     }
+     // st.pop(); // removes the last element on stack ;
+              //  System.out.println(st.peek()); //just see which element is on top (but don’t remove it).
+               // System.out.println(st);
+    */
+
+        /* stack Started */
+        public class Main {
+            public static void main(String[] args) {
+                Stack<Integer> st = new Stack<>();   // create a stack named 'st'
+                st.push(2);                          // stack: [2]
+                st.push(3);                          // stack: [2, 3]
+                st.push(4);                          // stack: [2, 3, 4]
+                System.out.println(st);              // prints [2, 3, 4]
+
+                int idx = 1;                         // position where we want to insert
+                int x = 12;                          // new element to insert (12)
+
+                Stack<Integer> temp = new Stack<>(); // temporary stack
+
+                // ----------- LOOP 1 ----------------
+                while(st.size() > idx){              // while size of st is > 1
+                    temp.push(st.pop());             // move elements from st -> temp
+                }
+
+                st.push(x);                          // push 12 into st
+                System.out.println(st);              // print st after inserting 12
+
+                // ----------- LOOP 2 ----------------
+                while(temp.size() > 0){              // while temp is not empty
+                    st.push(temp.pop());             // move back elements from temp -> st
+                }
+
+                System.out.println(st);              // final stack
+            }
+        }
+
