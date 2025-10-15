@@ -297,31 +297,43 @@ descendingIterator() → loop in reverse
         /* stack Started */
         public class Main {
             public static void main(String[] args) {
-                Stack<Integer> st = new Stack<>();   // create a stack named 'st'
-                st.push(2);                          // stack: [2]
-                st.push(3);                          // stack: [2, 3]
-                st.push(4);                          // stack: [2, 3, 4]
-                System.out.println(st);              // prints [2, 3, 4]
+                Scanner sc = new Scanner(System.in);
+//                Stack<Integer> st = new Stack<>();   // create a stack named 'st'
+//                st.push(2);                          // stack: [2]
+//                st.push(3);                          // stack: [2, 3]
+//                st.push(4);                          // stack: [2, 3, 4]
+//                System.out.println(st);              // prints [2, 3, 4]
+//
+//                int idx = 1;                         // position where we want to insert
+//                int x = 12;                          // new element to insert (12)
+//
+//                Stack<Integer> temp = new Stack<>(); // temporary stack
+//
+//                // ----------- LOOP 1 ----------------
+//                while(st.size() > idx){              // while size of st is > 1
+//                    temp.push(st.pop());             // move elements from st -> temp
+//                }
+//
+//                st.push(x);                          // push 12 into st
+//                System.out.println(st);              // print st after inserting 12
+//
+//                // ----------- LOOP 2 ----------------
+//                while(temp.size() > 0){              // while temp is not empty
+//                    st.push(temp.pop());             // move back elements from temp -> st
+//                }
+//
+//                System.out.println(st);              // final stack
+                System.out.println("Enter a number :");
+                int sum = 0 ;
+                int n =sc.nextInt();
+                int [] arr = new int[n];
+                for(int i = 0 ; i < n ;i++){
+                     arr[i]= sc.nextInt();
 
-                int idx = 1;                         // position where we want to insert
-                int x = 12;                          // new element to insert (12)
-
-                Stack<Integer> temp = new Stack<>(); // temporary stack
-
-                // ----------- LOOP 1 ----------------
-                while(st.size() > idx){              // while size of st is > 1
-                    temp.push(st.pop());             // move elements from st -> temp
                 }
-
-                st.push(x);                          // push 12 into st
-                System.out.println(st);              // print st after inserting 12
-
-                // ----------- LOOP 2 ----------------
-                while(temp.size() > 0){              // while temp is not empty
-                    st.push(temp.pop());             // move back elements from temp -> st
+                for (int i = 0 ; i< n ; i++) {
+                    System.out.println(arr[i]);
                 }
-
-                System.out.println(st);              // final stack
             }
         }
 
