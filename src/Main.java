@@ -1,5 +1,6 @@
 //import java.util.Arrays;
 //import java.util.Scanner;
+import java.util.Stack;
 import java.util.*;
 /*
 public class Main {*/
@@ -323,17 +324,21 @@ descendingIterator() → loop in reverse
 //                }
 //
 //                System.out.println(st);              // final stack
-                System.out.println("Enter a number :");
-                int sum = 0 ;
-                int n =sc.nextInt();
-                int [] arr = new int[n];
-                for(int i = 0 ; i < n ;i++){
-                     arr[i]= sc.nextInt();
-
-                }
-                for (int i = 0 ; i< n ; i++) {
-                    System.out.println(arr[i]);
-                }
+//                System.out.println("Enter a number :");
+//                int sum = 0 ;
+//                int n =sc.nextInt();
+//                int [] arr = new int[n];
+//                for(int i = 0 ; i < n ;i++){
+//                     arr[i]= sc.nextInt();
+//
+//                }
+//                for (int i = 0 ; i< n ; i++) {
+//                   sum += arr[i];
+//                }
+//                System.out.println(sum);
+//            }
+            Stack<Integer> stack = new Stack<>();
+            stack.push(1);
             }
         }
 
