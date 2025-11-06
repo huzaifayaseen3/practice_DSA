@@ -296,9 +296,9 @@ descendingIterator() → loop in reverse
     */
 
         /* stack Started */
-        public class Main {
-            public static void main(String[] args) {
-                Scanner sc = new Scanner(System.in);
+//        public class Main {
+//            public static void main(String[] args) {
+//                Scanner sc = new Scanner(System.in);
 //                Stack<Integer> st = new Stack<>();   // create a stack named 'st'
 //                st.push(2);                          // stack: [2]
 //                st.push(3);                          // stack: [2, 3]
@@ -337,8 +337,21 @@ descendingIterator() → loop in reverse
 //                }
 //                System.out.println(sum);
 //            }
-            Stack<Integer> stack = new Stack<>();
-            stack.push(1);
+//            Stack<Integer> stack = new Stack<>();
+//            stack.push(1);
+//            }
+//        }
+class Main{
+            public static void main(String[] args) {
+                int[] arr = new int[] {13, 34, 5, 6, 7};
+                System.out.println(arr[3 ]);
+                    for( int i:arr){
+                        System.out.print(i +" ");
+                    }
+                System.out.println();
+                        for(int i = arr.length-1; i>=0 ; i--){
+                            System.out.print(arr[i] +" ");
+                        }
             }
         }
 
