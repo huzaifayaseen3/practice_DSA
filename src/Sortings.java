@@ -452,7 +452,7 @@ public class Main {
 
     }
 }
-*/
+
 
 import java.util.Scanner;
 
@@ -521,5 +521,43 @@ class Linked_List {
 
         System.out.println("Linked List:");
         ll.printList();  // Output: B->A->C->null
+    }
+}
+
+ */
+/*
+Selection sorting
+ */
+public class Sortings {
+
+    public static void selectionSort(int[] arr) {
+        int n = arr.length;
+
+        // One by one move the boundary of the unsorted subarray
+        for (int i = 0; i < n - 1; i++) {
+            // Find the minimum element in the unsorted portion arr[i..n-1]
+            int minIndex = i;
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+            }
+
+            // Swap the found minimum element with the current element (arr[i])
+            int temp = arr[minIndex];
+            arr[minIndex] = arr[i];
+            arr[i] = temp;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] data = {64, 25, 12, 22, 11};
+        selectionSort(data);
+
+        System.out.println("Sorted array:");
+        for (int item : data) {
+            System.out.print(item + " ");
+        }
+        // Output: 11 12 22 25 64
     }
 }
