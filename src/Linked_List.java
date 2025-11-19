@@ -1,9 +1,6 @@
 //import java.util.Arrays;
 //import java.util.Scanner;
-import org.w3c.dom.Node;
 
-import java.util.Stack;
-import java.util.*;
 /*
 public class Main {*/
     /*
@@ -232,7 +229,7 @@ descendingIterator() → loop in reverse
             System.out.println(i + " ");
         }
      */
-    /* Linked list Starts */
+/* Linked list Starts */
 /*
     public static class Node{
         int data ;
@@ -268,8 +265,8 @@ descendingIterator() → loop in reverse
 //            System.out.println(temp.data + " ");
 //            temp= temp.next;
 //
-//        }
-        displayrecursion(a);
+//
+        display recursion(a);
 
 
 
@@ -297,7 +294,7 @@ descendingIterator() → loop in reverse
                // System.out.println(st);
     */
 
-        /* stack Started */
+/* stack Started */
 //        public class Main {
 //            public static void main(String[] args) {
 //                Scanner sc = new Scanner(System.in);
@@ -356,29 +353,173 @@ descendingIterator() → loop in reverse
 //                        }
 //            }
 //        }
+/*
+write a java program that create linked list by taking user input and then
+print them also Delete Nodes Greater Than 25,Search an Element in Linked List,i want linked list to print in ->
+tis fashion you can you built in function
+ */
+/*
+Fantastic Code
+import java.util.LinkedList;
+import java.util.Scanner;
 
-        class Main {
-            int size =0;
-            Node head ;
-            public  class Node {
-                String data ;
-                Node next ;
+public class Main {
 
-                public Node(String data) {
-                    this.data = data;
-                    this.next = null ; //tail points to null
-                    size++;
-                }
-            }
-            public void addFirst(String data) {
-                Node FirstNode = new Node(data);
-                FirstNode.next = head;
-                head = FirstNode;
-            }
-            public static  void main(String[] args) {
-                Main m = new Main();
-                Main.Node node = m.new Node("a");
-                System.out.println(node.data);
-            }
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        LinkedList<Integer> list = new LinkedList<>();
+
+        // -------------------------------
+        // 1. Create Linked List from User
+        // -------------------------------
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter value " + (i + 1) + ": ");
+            int val = sc.nextInt();
+            list.add(val);   // built-in add
         }
 
+        // Print list initially
+        System.out.println("\nOriginal LinkedList:");
+        printList(list);
+
+        // -----------------------------------
+        // 2. Delete elements greater than 25
+        // -----------------------------------
+        list.removeIf(x -> x > 25);   // built-in
+
+        System.out.println("\nLinkedList after deleting elements > 25:");
+        printList(list);
+
+        // ----------------------------
+        // 3. Search for an element
+        // ----------------------------
+        System.out.print("\nEnter element to search: ");
+        int key = sc.nextInt();
+
+        if (list.contains(key)) {   // built-in
+            System.out.println(key + " found in the LinkedList.");
+        } else {
+            System.out.println(key + " NOT found in the LinkedList.");
+        }
+    }
+
+    // ----------------------------
+    // Function to print like 3->5->4
+    // ----------------------------
+    public static void printList(LinkedList<Integer> list) {
+        if (list.isEmpty()) {
+            System.out.println("List is empty.");
+            return;
+        }
+
+        for (int i = 0; i < list.size(); i++) {
+            System.out.print(list.get(i));
+            if (i != list.size() - 1) {
+                System.out.print(" -> ");
+            }
+        }
+        System.out.println();
+    }
+}
+
+
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        LinkedList<Integer> list = new LinkedList<>();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter value " + (i + 1) + ": ");
+            int val = sc.nextInt();
+            list.add(val);   // built-in add
+        }
+
+        // Print list initially
+        System.out.println("\nOriginal LinkedList:");
+        System.out.println(list +" -> ");
+
+
+
+    }
+}
+*/
+
+import java.util.Scanner;
+
+class Linked_List {
+    Node head;
+    private int size;
+
+    Linked_List() {
+        size = 0;
+    }
+
+    public class Node {
+        String data;
+        Node next;
+
+        public Node(String data) {
+            this.data = data;
+            this.next = null;  // ✅ Fixed
+            size++;
+        }
+    }
+
+    public void addFirst(String data) {  // ✅ Changed return type to void
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;  // ✅ Fixed assignment
+            return;
+        }
+        newNode.next = head;
+        head = newNode;
+    }
+
+    public void addLast(String data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;  // ✅ Fixed
+            return;
+        }
+        Node currNode = head;
+        while (currNode.next != null) {  // ✅ Fixed condition
+            currNode = currNode.next;
+        }
+        currNode.next = newNode;  // ✅ Fixed assignment
+    }
+
+    public void printList() {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        Node currNode = head;
+        while (currNode != null) {
+            System.out.print(currNode.data + "->");
+            currNode = currNode.next;
+        }
+        System.out.println("null");  // ✅ Removed undefined variable
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Linked_List ll = new Linked_List();
+
+        ll.addFirst("A");
+        ll.addFirst("B");
+        ll.addLast("C");
+
+        System.out.println("Linked List:");
+        ll.printList();  // Output: B->A->C->null
+    }
+}
