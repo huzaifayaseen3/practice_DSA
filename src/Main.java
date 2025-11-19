@@ -1,5 +1,7 @@
 //import java.util.Arrays;
 //import java.util.Scanner;
+import org.w3c.dom.Node;
+
 import java.util.Stack;
 import java.util.*;
 /*
@@ -341,17 +343,42 @@ descendingIterator() → loop in reverse
 //            stack.push(1);
 //            }
 //        }
-class Main{
-            public static void main(String[] args) {
-                int[] arr = new int[] {13, 34, 5, 6, 7};
-                System.out.println(arr[3 ]);
-                    for( int i:arr){
-                        System.out.print(i +" ");
-                    }
-                System.out.println();
-                        for(int i = arr.length-1; i>=0 ; i--){
-                            System.out.print(arr[i] +" ");
-                        }
+//class Main{
+//            public static void main(String[] args) {
+//                int[] arr = new int[] {13, 34, 5, 6, 7};
+//                System.out.println(arr[3 ]);
+//                    for( int i:arr){
+//                        System.out.print(i +" ");
+//                    }
+//                System.out.println();
+//                        for(int i = arr.length-1; i>=0 ; i--){
+//                            System.out.pri;nt(arr[i] +" ");
+//                        }
+//            }
+//        }
+
+        class Main {
+            int size =0;
+            Node head ;
+            public  class Node {
+                String data ;
+                Node next ;
+
+                public Node(String data) {
+                    this.data = data;
+                    this.next = null ; //tail points to null
+                    size++;
+                }
+            }
+            public void addFirst(String data) {
+                Node FirstNode = new Node(data);
+                FirstNode.next = head;
+                head = FirstNode;
+            }
+            public static  void main(String[] args) {
+                Main m = new Main();
+                Main.Node node = m.new Node("a");
+                System.out.println(node.data);
             }
         }
 
