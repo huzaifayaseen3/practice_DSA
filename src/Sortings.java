@@ -428,31 +428,6 @@ public class Main {
 
 
 
-public class Main {
-
-    public static void main(String[] args) {
-
-        Scanner sc = new Scanner(System.in);
-        LinkedList<Integer> list = new LinkedList<>();
-
-        System.out.print("Enter number of elements: ");
-        int n = sc.nextInt();
-
-        for (int i = 0; i < n; i++) {
-            System.out.print("Enter value " + (i + 1) + ": ");
-            int val = sc.nextInt();
-            list.add(val);   // built-in add
-        }
-
-        // Print list initially
-        System.out.println("\nOriginal LinkedList:");
-        System.out.println(list +" -> ");
-
-
-
-    }
-}
-
 
 import java.util.Scanner;
 
